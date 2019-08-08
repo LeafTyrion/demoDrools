@@ -1,0 +1,10 @@
+package rules;
+import com.example.demo.domain.User
+dialect  "mvel"
+
+rule "userRule"
+    when
+        $u:User($u.getAge()>20)
+    then
+        $u.setIntroduce("我叫"+$u.getName()+"我是"+$u.getSex()+"我今年"+$u.getAge());
+end
